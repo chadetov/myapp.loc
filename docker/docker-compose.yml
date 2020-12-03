@@ -1,0 +1,42 @@
+version: "3.7"
+
+services:
+
+  db:
+     image: mysql:8
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: root_password_123
+       MYSQL_DATABASE: minyay
+       MYSQL_USER: dbuser
+       MYSQL_PASSWORD: db_password_123
+     command: --init-file /data/application/init.sql
+     ports:
+       - '3306:3306'
+     expose:
+       - '3306' 
+     volumes:
+       - /Users/onurbuyukceran/buddy/data/init.sql:/data/application/init.sql 
+     
+  web:
+    image: nginx:1.17
+    ports:
+      - 80:80
+    volumes:
+      - /Users/onurbuyukceran/buddy/php:/var/www/myapp
+      - /Users/onurbuyukceran/buddy/docker/site.conf:/etc/nginx/conf.d/site.conf
+    depends_on:
+      - php
+      - db
+
+  php:
+    image: php:7.2-fpm
+    volumes:
+      - /Users/onurbuyukceran/buddy/php:/var/www/myapp
+      - /Users/onurbuyukceran/buddy/docker/php.ini:/usr/local/etc/php/php.ini
+
+  composer:
+    image: composer:1.9
+    command: ["composer", "install"]
+    volumes:
+      - /Users/onurbuyukceran/buddy/php:/app
