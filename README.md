@@ -1,1 +1,1 @@
-# buddy
+# this is buddy app
