@@ -16,27 +16,30 @@ services:
      expose:
        - '3306' 
      volumes:
-       - /Users/onurbuyukceran/buddy/data/init.sql:/data/application/init.sql 
+       - ~/buddy/data/init.sql:/data/application/init.sql 
+
+  php:
+    image: php:7.2-fpm
+    volumes:
+      - ~/buddy/php:/var/www/myapp
+      - ~/buddy/docker/php.ini:/usr/local/etc/php/php.ini
      
   web:
     image: nginx:1.17
     ports:
       - 80:80
     volumes:
-      - /Users/onurbuyukceran/buddy/php:/var/www/myapp
-      - /Users/onurbuyukceran/buddy/docker/site.conf:/etc/nginx/conf.d/site.conf
+      - ~/buddy/php:/var/www/myapp
+      - ~/buddy/docker/site.conf:/etc/nginx/conf.d/site.conf
     depends_on:
       - php
       - db
 
-  php:
-    image: php:7.2-fpm
-    volumes:
-      - /Users/onurbuyukceran/buddy/php:/var/www/myapp
-      - /Users/onurbuyukceran/buddy/docker/php.ini:/usr/local/etc/php/php.ini
-
   composer:
-    image: composer:1.9
-    command: ["composer", "install"]
+    image: composer:2.0
+    command: ["composer", "update"]
+    working_dir: /var/www/myapp/php
     volumes:
-      - /Users/onurbuyukceran/buddy/php:/app
+      - ~/buddy/php:/var/www/myapp/php
+    depends_on:
+      - web
