@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b4a8c8b02b32113e651adaa0fdd99401",
+    "packages": [
+        {
+            "name": "chadetov/dalc",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chadetov/dalc.git",
+                "reference": "7536fb6250d0bfb3461a8a3f75be2c6c1c337e6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chadetov/dalc/zipball/7536fb6250d0bfb3461a8a3f75be2c6c1c337e6a",
+                "reference": "7536fb6250d0bfb3461a8a3f75be2c6c1c337e6a",
+                "shasum": ""
+            },
+            "type": "project",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Onur Buyukceran",
+                    "email": "onur.buyukceran@gmail.com",
+                    "homepage": "http://buyukceran.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "a database class to simplify data movements",
+            "support": {
+                "email": "support@buyukceran.com",
+                "irc": "irc://irc.freenode.org/dalc",
+                "issues": "https://github.com/chadetov/dalc/issues",
+                "source": "https://github.com/chadetov/dalc/tree/master"
+            },
+            "time": "2019-11-11T21:10:22+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.2"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

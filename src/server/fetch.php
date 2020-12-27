@@ -1,4 +1,4 @@
-<?php
+<?
 	
 	$cn = $_REQUEST['cn'];
 
