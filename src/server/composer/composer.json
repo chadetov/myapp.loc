@@ -1,0 +1,12 @@
+{
+	"autoload": {
+		"psr-4": {
+			"Minyay\\":"classes/"
+		}
+	},
+
+	"require": {
+    	"php": "^7.2",
+        "chadetov/dalc": "1.0.2"
+    }
+}

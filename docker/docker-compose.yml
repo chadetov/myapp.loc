@@ -38,8 +38,8 @@ services:
   composer:
     image: composer:2.0
     command: ["composer", "update"]
-    working_dir: /var/www/myapp/php
+    working_dir: /var/www/myapp/src
     volumes:
-      - ~/buddy/php:/var/www/myapp/php
+      - ~/buddy/src:/var/www/myapp/src
     depends_on:
       - web
